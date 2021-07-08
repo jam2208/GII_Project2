@@ -6,6 +6,11 @@
 
         <h1>잘된다</h1>
 
+        <form action="/accounts/hello_world/" method="post">
+            {% csrf_token %}
+            <input class="btn btn-info rounded-pill px-4" type="submit">
+        </form>
+
         <h3>{{ text }}</h3>
 
     </div>
