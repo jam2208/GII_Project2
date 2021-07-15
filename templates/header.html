@@ -1,10 +1,13 @@
 <div style="text-align: center">
+
     <div class="progmatic_header_logo">
         <h1>Pragmatic</h1>
     </div>
     <div class="progmatic_header_button">
         <span>nav1</span>
         <span>nav2</span>
+
+        {%  if not user.is_authenticated %}
         <span>
             <a href="{% url 'accountapp:login' %}">
                 Login
@@ -15,5 +18,16 @@
                 SignUp
             </a>
         </span>
+
+        {% else %}
+        <span>
+            <a href="{% url 'accountapp:logout' %}">
+                Logout
+            </a>
+        </span>
+
+        {% endif %}
+
     </div>
+
 </div>
