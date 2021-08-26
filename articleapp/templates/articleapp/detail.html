@@ -29,9 +29,9 @@
                  class="article_image"
                  alt="">
             <div class="article_content">
-                {{ target_article.content }}
+                {{ target_article.content | safe }}
             </div>
-
+            {% if target_article.writer == user %}
             <div>
                 <a href="{%  url 'articleapp:update' pk=target_article.pk %}"
                    class="btn btn-success rounded-pill px-5">
@@ -42,6 +42,7 @@
                     Delete
                 </a>
             </div>
+            {% endif %}
         </div>
 
         <hr>
