@@ -84,3 +84,7 @@ __pycache__/
 media/
 
 staticfiles/
+
+junwoovps_gcp
+junwoovps_gcp.pub
+
