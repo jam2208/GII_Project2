@@ -14,6 +14,14 @@ services:
       - gii_project2_media:/data/media/
       - gii_log:/var/log/nginx/
 
+  goaccess:
+    image: allinurl/goaccess:1.5.2
+    volumes:
+      - gii_log:/var/log/nginx/
+    ports:
+      - 7890:7890
+    command: /var/log/nginx/gii_access.log -o /var/log/nginx/report.html --log-format=COMBINED --real-time-html
+
   django:
     image: gii_project2:5
     networks:
